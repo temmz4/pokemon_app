@@ -4,7 +4,7 @@ const myStyle = {
     backgroundColor: '#000000',
     };
 
-class Index extends React.Component {
+    class MyFirstComponent extends React.Component() {
     render () {
         
         return (
@@ -18,4 +18,4 @@ class Index extends React.Component {
     };
 };
 
-// module.exports = Index
+module.exports = Index
