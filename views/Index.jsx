@@ -1,21 +1,44 @@
-const React = require('react');
-const myStyle = {
+const h1 = {
     color: '#ffffff',
-    backgroundColor: '#000000',
-    };
+    backgroundColor: '#a91c49',
+    padding: '10px'
+};
 
-    class MyFirstComponent extends React.Component() {
-    render () {
-        
+const React = require("react");
+
+class Index extends React.Component {
+    render() {
+        const { pokemon } = this.props;    // destructure the pokemon array
+
         return (
-            <div style={myStyle}>My First React Component!
-                <h1>See All Pokemon</h1>
+            <div>
+                <h1 style={h1}>See All The Pokemon!</h1>
+                <nav>
+                    <a href="/pokemon/new">Create New Pokemon</a>
+                </nav>
                 <ul>
+
+                    {
+
+                        pokemon.map((character, i) => {
+                            let charName = character.name;
+
+                            return (
+                                <li key = {i}>
+                                    <a href={`/pokemon/${character._id}`}>
+                                    {charName.charAt(0).toUpperCase() + charName.slice(1).toLowerCase()}
+                                    </a>
+                                </li>
+                            )
+                        })
+
+                    }
+
 
                 </ul>
             </div>
         )
-    };
-};
+    }
+}
 
 module.exports = Index
