@@ -1,7 +1,6 @@
 const h1 = {
     color: '#ffffff',
-    backgroundColor: '#a91c49',
-    padding: '10px'
+    backgroundColor: '#000000',
 };
 
 const React = require("react");
